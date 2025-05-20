@@ -1,10 +1,17 @@
-#ifndef MOTOR_DRIVER_H
-#define MOTOR_DRIVER_H
+#include "hall_sensor.h"
+#include "Com_table.h"
+#include "MotorDriver.h"
 
-class MotorDriver {
-public:
-  void begin();
-  void setPhase(int high, int low);
-};
+HallSensor hallSensor;
+MotorDriver motor;
 
-#endif
+void setup() {
+  Serial.begin(115200);
+  hallSensor.begin();
+  motor.begin();
+}
+
+void loop() {
+  uint8_t state = hallSensor.readState();
+  commutate(state, motor);
+}

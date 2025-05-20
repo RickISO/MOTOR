@@ -1,12 +1,8 @@
+
 #ifndef dependencies_h
 #define dependencies_h
 #include <Arduino.h>
 #include <stdint.h> // For uint8_t
-
-
-// motor_common.h
-#ifndef MOTOR_COMMON_H
-#define MOTOR_COMMON_H
 
 // Tipos de datos estándar
 #include <stdint.h>
